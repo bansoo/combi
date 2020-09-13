@@ -1,4 +1,4 @@
-#리스트받아서 중복 제거 후 반환
+#(2) 리스트받아서 중복 제거 후 반환
 def get_list(lst):
     newlst = []
     for i in lst:
@@ -6,20 +6,23 @@ def get_list(lst):
             newlst.append(i)
     return newlst
 
-
+#(3) 초기 설정
 def init_combi(lst):
     combi(lst,0)
 
-#슬라이스하고 재귀
+#(4) 재귀(cnt 원소 pop하면서 재귀)
 def combi(lst, cnt):
     if cnt == len(lst):
-        print(lst)
+        if cnt !=0: #(5)공집합 제거용 조건문
+            print(lst)
+            #print(cnt)
+            return
         return
-    print(cnt)
+
     combi(lst[:], cnt+1)
     lst.pop(cnt)
     combi(lst[:], cnt)
 
 
-lst = input().split(",")
+lst = input().split(",")     # (1) "1,2,3"과 같은 형태로 input 값 인
 init_combi(get_list(lst))
