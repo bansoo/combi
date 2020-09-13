@@ -24,5 +24,5 @@ def combi(lst, cnt):
     combi(lst[:], cnt)
 
 
-lst = input().split(",")     # (1) "1,2,3"과 같은 형태로 input 값 인
+lst = input().split(",")     # (1) "1,2,3"과 같은 형태로 input
 init_combi(get_list(lst))
